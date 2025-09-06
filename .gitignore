@@ -1,0 +1,9 @@
+# Node & Build
+node_modules/
+*.log
+.DS_Store
+.vscode/
+
+# build artifacts
+style.css
+style.css.map

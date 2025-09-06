@@ -1,0 +1,22 @@
+// Variablen & Mixins zuerst
+@use 'layout/colors';
+@use 'layout/fonts';
+@use 'layout/mixins';
+@use 'layout/style';
+
+body {
+    background-color: rgba(213, 229, 189, 0.995);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
