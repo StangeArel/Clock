@@ -1,22 +1,58 @@
 // Variablen & Mixins zuerst
-@use 'layout/colors';
-@use 'layout/fonts';
-@use 'layout/mixins';
-@use 'layout/style';
+@use 'layout/base' as *;
+@use 'layout/colors' as *;
+@use 'layout/fonts' as *;
+@use 'layout/mixins' as *;
+@use 'layout/style' as *;
 
 body {
-    background-color: rgba(213, 229, 189, 0.995);
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+    h1 {
+        position: absolute;
+        z-index: 2;
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
+        &::before {
+            content: "Hallo ";
+            color: #e70bd8;
+        }
+    }
+
+    .background {
+        position: relative;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-align: center;
+        font-size: 10px;
+        min-height: 100dvh;
+        width: 100%;
+        place-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: $skyBlue url('https://picsum.photos/1500/1000?image=881');
+            filter: blur(8px);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .clock {
+            position: relative;
+            z-index: 1;
+            width: 30rem;
+            height: 30rem;
+            border: 20px solid $neutral;
+            border-radius: 50%;
+        }
+    }
 }
